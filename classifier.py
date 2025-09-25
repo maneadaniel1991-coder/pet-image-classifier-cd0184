@@ -15,7 +15,6 @@ def _get_model_and_meta(arch: str):
         model = models.resnet18(weights=weights)
     else:
         raise ValueError(f"Unsupported arch: {arch}")
-
     categories = weights.meta.get("categories", [])
     preprocess = transforms.Compose([
         transforms.Resize(256),
@@ -33,7 +32,6 @@ def classifier(image_path: str, arch: str) -> str:
     img = Image.open(image_path).convert("RGB")
     x = preprocess(img).unsqueeze(0)
     with torch.no_grad():
-        logits = model(x)
-        idx = int(logits.argmax(1))
+        idx = int(model(x).argmax(1))
     label = categories[idx] if categories and 0 <= idx < len(categories) else str(idx)
     return label.lower().replace("_", " ").strip()
