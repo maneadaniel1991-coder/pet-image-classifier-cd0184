@@ -1,0 +1,19 @@
+﻿Uploaded Images Q&A (fill this after running run_models_batch_uploaded.*)
+
+1) Did all three models classify Dog_01.jpg as the same breed?
+   - ResNet:  ______________________
+   - AlexNet: ______________________
+   - VGG:     ______________________
+   Notes:
+
+2) Did each model classify Dog_01.jpg and Dog_02.jpg as the same breed for that model?
+   - ResNet same?  Yes/No  (explain)
+   - AlexNet same? Yes/No  (explain)
+   - VGG same?     Yes/No  (explain)
+
+3) Did all three models correctly classify Animal_Name_01.jpg and Object_Name_01.jpg as NOT dogs?
+   - Animal:  ______________________   (misclassifications if any)
+   - Object:  ______________________   (misclassifications if any)
+
+4) Which model did best on the 4 uploaded images, and why?
+   Answer:

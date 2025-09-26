@@ -1,0 +1,11 @@
+
+*** Results Summary for CNN Model Architecture: RESNET ***
+            Number of Images: 40
+        Number of Dog Images: 30
+  Number of Not-a-Dog Images: 10
+                   Pct Match: 67.5%
+            Pct Correct Dogs: 70.0%
+           Pct Correct Breed: 60.0%
+         Pct Correct Notdogs: 90.0%
+
+Total Elapsed Runtime: 0.00 hours, 0.17 minutes, 10.39 seconds
