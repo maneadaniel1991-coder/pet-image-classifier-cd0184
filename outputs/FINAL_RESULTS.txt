@@ -1,29 +1,21 @@
 ﻿Final Results (pet_images)
---- resnet_pet-images.txt ---
+ --- resnet_pet-images.txt ---
 *** Results Summary for CNN Model Architecture: RESNET ***
             Number of Images: 40
-        Number of Dog Images: 30
-  Number of Not-a-Dog Images: 10
                    Pct Match: 67.5%
             Pct Correct Dogs: 70.0%
            Pct Correct Breed: 60.0%
          Pct Correct Notdogs: 90.0%
-
---- alexnet_pet-images.txt ---
+ --- alexnet_pet-images.txt ---
 *** Results Summary for CNN Model Architecture: ALEXNET ***
             Number of Images: 40
-        Number of Dog Images: 30
-  Number of Not-a-Dog Images: 10
                    Pct Match: 65.0%
             Pct Correct Dogs: 73.3%
            Pct Correct Breed: 53.3%
          Pct Correct Notdogs: 100.0%
-
---- vgg_pet-images.txt ---
+ --- vgg_pet-images.txt ---
 *** Results Summary for CNN Model Architecture: VGG ***
             Number of Images: 40
-        Number of Dog Images: 30
-  Number of Not-a-Dog Images: 10
                    Pct Match: 72.5%
             Pct Correct Dogs: 70.0%
            Pct Correct Breed: 63.3%

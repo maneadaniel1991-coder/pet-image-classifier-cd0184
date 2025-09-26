@@ -8,4 +8,4 @@
            Pct Correct Breed: 60.0%
          Pct Correct Notdogs: 90.0%
 
-Total Elapsed Runtime: 0.00 hours, 0.17 minutes, 10.39 seconds
+Total Elapsed Runtime: 0.00 hours, 0.27 minutes, 16.20 seconds
