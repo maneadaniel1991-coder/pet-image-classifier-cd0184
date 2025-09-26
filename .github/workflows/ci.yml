@@ -1,0 +1,44 @@
+name: CI (CPU) - pet-image-classifier
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [vgg, alexnet, resnet]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install deps (CPU wheels)
+        run: |
+          python -m pip install --upgrade pip
+          # Install CPU-only torch/vision first (faster & reliable on CI)
+          pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision
+          # Then your remaining deps without reinstalling torch/vision
+          pip install -r requirements.txt --no-deps
+
+      - name: Run check_images.py (${{ matrix.arch }})
+        run: |
+          mkdir -p outputs
+          python check_images.py \
+            --dir data/pet_images/ \
+            --arch ${{ matrix.arch }} \
+            --dogfile data/dognames.txt \
+            --print_misclassified \
+          | tee outputs/${{ matrix.arch }}_run.txt
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.arch }}
+          path: outputs/${{ matrix.arch }}_run.txt
